@@ -99,7 +99,11 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
     const isbn = document.querySelector("#isbn").value;
 
     // VALIDATE
-    if (title === "" || author === "" || isbn === "") {
+    // console.log(document.querySelector(".alert"));
+    if ((title === "" || author === "" || isbn === "") && document.querySelector(".alert")) {
+        document.querySelector(".alert").remove();
+        UI.showAlert("Please fill in all fields", "danger");
+    } else if (title === "" || author === "" || isbn === "") {
         UI.showAlert("Please fill in all fields", "danger");
     } else {
         // INSTANTIATE BOOK
@@ -113,6 +117,7 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
         Store.addBook(book);
 
         // SHOW SUCCESS MESSAGE
+        document.querySelector(".alert").remove();
         UI.showAlert('Book Added', "success");
 
         // CLEAR FIELDS
