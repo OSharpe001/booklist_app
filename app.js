@@ -43,7 +43,8 @@ class UI {
         const container = document.querySelector(".container");
         const form = document.querySelector("#book-form");
         container.insertBefore(div, form);
-        // VANISH IN 3 SECONDS
+
+        // ALERT VANISHES IN 3 SECONDS
         setTimeout(() => document.querySelector(".alert").remove(), 3000)
     };
 
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
 // EVENT: ADD A BOOK
 document.querySelector("#book-form").addEventListener("submit", (e) => {
+
     // PREVENT ACTUAL SUBMIT
     e.preventDefault();
 
@@ -99,7 +101,6 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
     const isbn = document.querySelector("#isbn").value;
 
     // VALIDATE
-    // console.log(document.querySelector(".alert"));
     if ((title === "" || author === "" || isbn === "") && document.querySelector(".alert")) {
         document.querySelector(".alert").remove();
         UI.showAlert("Please fill in all fields", "danger");
@@ -108,7 +109,6 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
     } else {
         // INSTANTIATE BOOK
         const book = new Book(title, author, isbn);
-        // console.log(book);
 
         // ADD BOOK TO UI
         UI.addBookToList(book);
