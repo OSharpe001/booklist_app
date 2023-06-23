@@ -10,6 +10,6 @@
 
 ## US5: As a user, when I click the "Add Book" button (after filling in all fields), I expect to see all of the info in the input fields disappear, allowing me to easily input another entry.
 
-## US6: As a user, when I click the "x" button (in the table row of a particular book entry), I expect to see that particular entry disappear from the table.
+## US6: As a user, when I click the "x" button (delete) in the table row of a particular book entry, I expect to see that particular entry disappear from the table.
 
 ## US7: As a user, if I were to close or refresh my browser, I would expect to see all my previously saved books info return to the table.
